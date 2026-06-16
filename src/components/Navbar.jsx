@@ -24,7 +24,7 @@ export default function Navbar() {
             B
           </div>
           <span className="font-display text-lg font-semibold text-ink-100 tracking-tight">
-            Bookify
+            Booklify
           </span>
         </Link>
 
