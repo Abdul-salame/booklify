@@ -1,3 +1,4 @@
+
 const BASE_URL = import.meta.env.VITE_API_URL || ''
 
 async function request(method, path, body) {
@@ -16,7 +17,6 @@ async function request(method, path, body) {
   return data
 }
 
-// Books 
 export const bookService = {
   getAll: () => request('GET', '/books'),
   getById: (id) => request('GET', `/books/${id}`),
@@ -25,7 +25,6 @@ export const bookService = {
   delete: (id) => request('DELETE', `/books/${id}`),
 }
 
-// Users 
 export const userService = {
   register: (payload) => request('POST', '/users/create', payload),
   login: (payload) => request('POST', '/users/login', payload),
