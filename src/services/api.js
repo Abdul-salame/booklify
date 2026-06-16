@@ -1,4 +1,4 @@
-const BASE_URL = '//'  // http://localhost:3000
+const BASE_URL = import.meta.env.VITE_API_URL || ''
 
 async function request(method, path, body) {
   const options = {
@@ -7,7 +7,7 @@ async function request(method, path, body) {
   }
   if (body) options.body = JSON.stringify(body)
 
-  const res = await fetch(path, options)
+  const res = await fetch(`${BASE_URL}${path}`, options)
   const data = await res.json()
 
   if (!res.ok) {
